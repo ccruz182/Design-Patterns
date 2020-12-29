@@ -1,0 +1,15 @@
+from interfaces.builder import Builder
+from cars.manual_car import ManualCar
+
+class ManualCarBuilder(Builder):
+    def set_car_type(self, _type: str):
+        self._type = _type
+
+    def set_seats(self, seats: int):
+        self.seats = seats
+
+    def set_transmission(self, transmission: str):
+        self.transmission = transmission
+
+    def get_car(self):
+        return ManualCar(self.seats, self.transmission)
